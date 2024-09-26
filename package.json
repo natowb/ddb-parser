@@ -1,0 +1,21 @@
+{
+  "name": "@natowb/ddb-parser",
+  "version": "0.0.3-alpha",
+  "description": "a parser for dnd beyond character sheet json",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest test ./lib/**/*.ts --coverage --collectCoverageFrom=./lib/**/*.ts",
+    "prepublish": "pnpm build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.2"
+  }
+}
