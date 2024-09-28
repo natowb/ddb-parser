@@ -1,6 +1,6 @@
 {
   "name": "@natowb/ddb-parser",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "a parser for dnd beyond character sheet json",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
