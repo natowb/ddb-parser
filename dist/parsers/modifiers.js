@@ -9,7 +9,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getAbilityScoreModifier = exports.getAllModifiersOfType = exports.getModifiersOfType = exports.sumModifiersOfType = exports.sumAllModifiersOfType = void 0;
+exports.getAbilityScoreModifier = exports.getAllModifiersOfType = exports.getModifiersOfType = exports.maxAllModifierOfType = exports.maxModifierOfType = exports.sumModifiersOfType = exports.sumAllModifiersOfType = void 0;
 var calculator_1 = require("./calculator");
 var sumAllModifiersOfType = function (modifiers, type, subType) {
     var combined = __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], modifiers.class, true), modifiers.race, true), modifiers.item, true), modifiers.condition, true), modifiers.background, true);
@@ -23,6 +23,21 @@ var sumModifiersOfType = function (modifiers, type, subType) {
     return values.reduce(function (sum, value) { return sum + value; }, 0);
 };
 exports.sumModifiersOfType = sumModifiersOfType;
+var maxModifierOfType = function (modifiers, type, subType) {
+    if (subType === void 0) { subType = null; }
+    var filtered = (0, exports.getModifiersOfType)(modifiers, type, subType);
+    var values = filtered.map(function (modifier) { return modifier.value; });
+    if (values && values.length > 0) {
+        return Math.max.apply(Math, values);
+    }
+    return 0;
+};
+exports.maxModifierOfType = maxModifierOfType;
+var maxAllModifierOfType = function (modifiers, type, subType) {
+    var combined = __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], modifiers.class, true), modifiers.race, true), modifiers.item, true), modifiers.condition, true), modifiers.background, true);
+    return (0, exports.maxModifierOfType)(combined, type, subType);
+};
+exports.maxAllModifierOfType = maxAllModifierOfType;
 var getModifiersOfType = function (modifiers, type, subType) {
     if (subType === void 0) { subType = null; }
     var filtered = modifiers.filter(function (item) {

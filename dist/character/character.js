@@ -6,6 +6,7 @@ var calculator_1 = require("../parsers/calculator");
 var hp_1 = require("../parsers/hp");
 var passive_1 = require("../parsers/passive");
 var savingThrows_1 = require("../parsers/savingThrows");
+var senses_1 = require("../parsers/senses");
 var spells_1 = require("../parsers/spells");
 // character.name -> string; // characters name
 // character.avatarUrl -> string | null; // either url to avatar image or null
@@ -31,6 +32,9 @@ var DndCharacter = /** @class */ (function () {
         this.walkSpeed = data.race.weightSpeeds.normal.walk;
         this.casting = {
             dc: (0, spells_1.getSaveDC)(data)
+        };
+        this.senses = {
+            darkvision: (0, senses_1.getDarkvisionInFt)(data)
         };
     }
     return DndCharacter;

@@ -30,7 +30,7 @@ export interface ClassDefinition {
     name: string;
 }
 export interface CharacterData {
-    id: string;
+    id: number;
     name: string;
     decorations: {
         avatarUrl: string | null;

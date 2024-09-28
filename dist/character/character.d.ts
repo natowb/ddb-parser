@@ -9,7 +9,7 @@ type DndHealth = {
     max: number;
 };
 export declare class DndCharacter {
-    id: string;
+    id: number;
     name: string;
     avatarUrl: string | null;
     level: number;
@@ -22,6 +22,9 @@ export declare class DndCharacter {
     classes: DndClass[];
     casting: {
         dc: number;
+    };
+    senses: {
+        darkvision: number;
     };
     initiativeBonus: number;
     constructor(data: CharacterData);
