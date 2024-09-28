@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest test ./lib/**/*.ts --coverage --collectCoverageFrom=./lib/**/*.ts",
-    "prepublish": "pnpm build"
+    "ci:publish": "pnpm build && pnpm publish -r"
   },
   "keywords": [],
   "author": "",
