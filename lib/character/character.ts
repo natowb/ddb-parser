@@ -4,6 +4,7 @@ import { calculateProficiencyBonus, calculateTotalLevel, getClasses } from "../p
 import { getCurrentHP, getInitiativeBonus, getMaxHP } from "../parsers/hp";
 import { getPassives } from "../parsers/passive";
 import { getSavingThrows } from "../parsers/savingThrows";
+import { getDarkvisionInFt } from "../parsers/senses";
 import { getSaveDC } from "../parsers/spells";
 export type DndClass = {
   level: number;
@@ -22,7 +23,7 @@ type DndHealth = {
 // character.profBonus -> number; // characters prof bonus
 
 export class DndCharacter {
-  id: string;
+  id: number;
   name: string;
   avatarUrl: string | null;
   level: number;
@@ -35,6 +36,9 @@ export class DndCharacter {
   classes: DndClass[];
   casting: {
     dc: number;
+  }
+  senses: {
+    darkvision: number;
   }
   initiativeBonus: number;
   constructor(data: CharacterData) {
@@ -55,6 +59,9 @@ export class DndCharacter {
     this.walkSpeed = data.race.weightSpeeds.normal.walk;
     this.casting = {
       dc: getSaveDC(data)
+    }
+    this.senses = {
+      darkvision: getDarkvisionInFt(data)
     }
   }
 }

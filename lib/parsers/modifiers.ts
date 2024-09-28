@@ -21,6 +21,29 @@ export const sumModifiersOfType = (modifiers: DDBModifier[], type: string, subTy
   return values.reduce((sum, value) => sum + value, 0);
 }
 
+export const maxModifierOfType = (modifiers: DDBModifier[], type: string, subType: string | null = null): number => {
+  const filtered = getModifiersOfType(modifiers, type, subType);
+  const values = filtered.map(modifier => modifier.value);
+  if (values && values.length > 0) {
+    return Math.max(...values);
+  }
+
+  return 0;
+}
+
+
+
+export const maxAllModifierOfType = (modifiers: DDBModifiers, type: string, subType: string): number => {
+  const combined = [
+    ...modifiers.class,
+    ...modifiers.race,
+    ...modifiers.item,
+    ...modifiers.condition,
+    ...modifiers.background
+  ];
+  return maxModifierOfType(combined, type, subType);
+}
+
 
 export const getModifiersOfType = (modifiers: DDBModifier[],
   type: string, subType: string | null = null): DDBModifier[] => {
