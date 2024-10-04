@@ -9,7 +9,8 @@ export const sumAllModifiersOfType = (modifiers: DDBModifiers, type: string, sub
     ...modifiers.race,
     ...modifiers.item,
     ...modifiers.condition,
-    ...modifiers.background
+    ...modifiers.background,
+    ...modifiers.feat,
   ];
   return sumModifiersOfType(combined, type, subType);
 }
@@ -39,7 +40,8 @@ export const maxAllModifierOfType = (modifiers: DDBModifiers, type: string, subT
     ...modifiers.race,
     ...modifiers.item,
     ...modifiers.condition,
-    ...modifiers.background
+    ...modifiers.background,
+    ...modifiers.feat,
   ];
   return maxModifierOfType(combined, type, subType);
 }
@@ -67,7 +69,8 @@ export const getAllModifiersOfType = (modifiers: DDBModifiers, type: string, sub
     ...modifiers.race,
     ...modifiers.item,
     ...modifiers.condition,
-    ...modifiers.background
+    ...modifiers.background,
+    ...modifiers.feat,
   ];
   return getModifiersOfType(combined, type, subType);
 }

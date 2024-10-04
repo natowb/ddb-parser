@@ -16,6 +16,7 @@ export interface DDBModifiers {
     background: Array<DDBModifier>;
     item: Array<DDBModifier>;
     condition: Array<DDBModifier>;
+    feat: Array<DDBModifier>;
 }
 export interface ItemDefinition {
     filterType: string;

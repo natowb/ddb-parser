@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAbilityScoreModifier = exports.getAllModifiersOfType = exports.getModifiersOfType = exports.maxAllModifierOfType = exports.maxModifierOfType = exports.sumModifiersOfType = exports.sumAllModifiersOfType = void 0;
 var calculator_1 = require("./calculator");
 var sumAllModifiersOfType = function (modifiers, type, subType) {
-    var combined = __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], modifiers.class, true), modifiers.race, true), modifiers.item, true), modifiers.condition, true), modifiers.background, true);
+    var combined = __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], modifiers.class, true), modifiers.race, true), modifiers.item, true), modifiers.condition, true), modifiers.background, true), modifiers.feat, true);
     return (0, exports.sumModifiersOfType)(combined, type, subType);
 };
 exports.sumAllModifiersOfType = sumAllModifiersOfType;
@@ -34,7 +34,7 @@ var maxModifierOfType = function (modifiers, type, subType) {
 };
 exports.maxModifierOfType = maxModifierOfType;
 var maxAllModifierOfType = function (modifiers, type, subType) {
-    var combined = __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], modifiers.class, true), modifiers.race, true), modifiers.item, true), modifiers.condition, true), modifiers.background, true);
+    var combined = __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], modifiers.class, true), modifiers.race, true), modifiers.item, true), modifiers.condition, true), modifiers.background, true), modifiers.feat, true);
     return (0, exports.maxModifierOfType)(combined, type, subType);
 };
 exports.maxAllModifierOfType = maxAllModifierOfType;
@@ -52,7 +52,7 @@ var getModifiersOfType = function (modifiers, type, subType) {
 };
 exports.getModifiersOfType = getModifiersOfType;
 var getAllModifiersOfType = function (modifiers, type, subType) {
-    var combined = __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], modifiers.class, true), modifiers.race, true), modifiers.item, true), modifiers.condition, true), modifiers.background, true);
+    var combined = __spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray(__spreadArray([], modifiers.class, true), modifiers.race, true), modifiers.item, true), modifiers.condition, true), modifiers.background, true), modifiers.feat, true);
     return (0, exports.getModifiersOfType)(combined, type, subType);
 };
 exports.getAllModifiersOfType = getAllModifiersOfType;
