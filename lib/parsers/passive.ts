@@ -30,7 +30,7 @@ const getPassiveScore = (character: CharacterData, proficiencyName: string): num
 
   let skillMod = 0;
 
-  const activeBonuses = getAllModifiersOfType(character.modifiers, 'proficiency', `${proficiencyName}-saving-throws`);
+  const activeBonuses = getAllModifiersOfType(character.modifiers, 'proficiency', proficiencyName);
   if (activeBonuses.length > 0) {
     skillMod = calculateProficiencyBonus(calculateTotalLevel(character.classes));
   }

@@ -25,7 +25,7 @@ var getPassiveScore = function (character, proficiencyName) {
             statMod = 0;
     }
     var skillMod = 0;
-    var activeBonuses = (0, modifiers_1.getAllModifiersOfType)(character.modifiers, 'proficiency', "".concat(proficiencyName, "-saving-throws"));
+    var activeBonuses = (0, modifiers_1.getAllModifiersOfType)(character.modifiers, 'proficiency', proficiencyName);
     if (activeBonuses.length > 0) {
         skillMod = (0, calculator_1.calculateProficiencyBonus)((0, calculator_1.calculateTotalLevel)(character.classes));
     }
