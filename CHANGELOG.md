@@ -1,5 +1,11 @@
 # @natowb/ddb-parser
 
+## 0.2.1
+
+### Patch Changes
+
+- fix modifier calculation by using feats
+
 ## 0.2.0
 
 ### Minor Changes
