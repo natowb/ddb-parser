@@ -1,5 +1,11 @@
 # @natowb/ddb-parser
 
+## 0.2.2
+
+### Patch Changes
+
+- af27ebd: check for skill prof for passives
+
 ## 0.2.1
 
 ### Patch Changes
